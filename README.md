@@ -222,7 +222,7 @@ googleFinance.historical({
 
 ```js
 googleFinance.prices({
-  symbol: SYMBOL,
+  symbol: 'TYO:6664',
   interval: 300,
   period: '1d'
 }, function (err, quotes) {
@@ -258,7 +258,7 @@ googleFinance.prices({
 
 ```js
 googleFinance.prices({
-  symbols: [SYMBOL1, SYMBOL2],
+  symbols: ['SHA:600519','TYO:6664'],
   interval: 180,
   period: '1w'
 }, function (err, result) {

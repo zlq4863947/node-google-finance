@@ -32,7 +32,7 @@ googleFinance.historical({
 });
 ```
 
-* [See more comprehensive examples here.](https://github.com/pilwon/node-google-finance/tree/master/examples)
+* [See more comprehensive examples here.](https://github.com/zlq4863947/node-google-finance/tree/master/examples)
 
 
 ## API
@@ -244,7 +244,7 @@ googleFinance.historical({
 
 ## Credits
 
-  See the [contributors](https://github.com/pilwon/node-google-finance/graphs/contributors).
+  See the [contributors](https://github.com/zlq4863947/node-google-finance/graphs/contributors).
 
 
 ## License
@@ -273,4 +273,4 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.
 </pre>
 
-[![Analytics](https://ga-beacon.appspot.com/UA-47034562-6/node-google-finance/readme?pixel)](https://github.com/pilwon/node-google-finance)
+[![Analytics](https://ga-beacon.appspot.com/UA-47034562-6/node-google-finance/readme?pixel)](https://github.com/zlq4863947/node-google-finance)

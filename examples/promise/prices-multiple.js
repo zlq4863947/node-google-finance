@@ -5,21 +5,23 @@ require('colors');
 
 var googleFinance = require('../..');
 
-var SYMBOL = 'TYO:5341'; //'NASDAQ:AAPL';// 
+var SYMBOL = 'TYO:6664'; //'NASDAQ:AAPL';// 
 
 var SYMBOLS = [
   'NASDAQ:AAPL',
-  'TYO:5341'
+  'TYO:6664'
 ];
 var FROM = '2017-05-01';
 var TO = '2017-12-31';
 
 googleFinance.prices({
-  symbols: SYMBOLS,
-  from: FROM,
-  to: TO
+  //symbols: SYMBOLS,
+  symbol: SYMBOL,
+  interval: 180,
+  period: '1w'
 }).then(function(result) {
-  _.each(result, function(quotes, symbol) {
+  var isMulti = false;
+  var showData = function(quotes, symbol) {
     console.log(util.format(
       '=== %s (%d) ===',
       symbol,
@@ -34,5 +36,12 @@ googleFinance.prices({
     } else {
       console.log('N/A');
     }
-  });
+  }
+  if (isMulti) {
+    _.each(result, function(quotes, symbol) {
+      showData(quotes, symbol);
+    });
+  } else {
+    showData(result);
+  }
 });

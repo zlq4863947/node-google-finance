@@ -12,7 +12,7 @@ googleFinance.historical({
   symbol: SYMBOL,
   from: FROM,
   to: TO
-}).then(function (quotes) {
+}).then(function(quotes) {
   console.log(util.format(
     '=== %s (%d) ===',
     SYMBOL,

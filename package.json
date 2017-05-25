@@ -1,16 +1,16 @@
 {
-  "name": "google-finance",
+  "name": "google-finance2",
   "description": "Google Finance company news and historical quotes data downloader written in Node.js",
-  "version": "0.1.9",
+  "version": "0.0.1",
   "license": "MIT",
   "author": {
-    "name": "Pilwon Huh",
-    "email": "pilwon@gmail.com"
+    "name": "zlq4863947",
+    "email": "zlq4863947@gmail.com"
   },
-  "homepage": "https://github.com/pilwon/node-google-finance",
+  "homepage": "https://github.com/zlq4863947/node-google-finance2",
   "repository": {
     "type": "git",
-    "url": "git://github.com/pilwon/node-google-finance.git"
+    "url": "git://github.com/zlq4863947/node-google-finance2.git"
   },
   "keywords": [
     "google",

@@ -1,6 +1,6 @@
-# google-finance
+# google-finance2
 
-`google-finance` is [Google Finance](http://finance.google.com/) company news and historical quotes data downloader written in [Node.js](http://nodejs.org/).
+`google-finance2` is fork by [google-finance](https://github.com/pilwon/node-google-finance/), is [Google Finance](http://finance.google.com/) company news and historical quotes data downloader written in [Node.js](http://nodejs.org/).
 
 The library handles fetching, parsing, and cleaning of CSV data and returns JSON result that is convenient and easy to work with. Both callback (last parameter) and promises (using [Bluebird](https://github.com/petkaantonov/bluebird)) styles are supported.
 
@@ -9,13 +9,13 @@ Also check out [yahoo-finance](https://github.com/pilwon/node-yahoo-finance).
 
 ## Installation
 
-    $ npm install google-finance
+    $ npm install google-finance2
 
 
 ## Usage
 
 ```js
-var googleFinance = require('google-finance');
+var googleFinance = require('google-finance2');
 
 googleFinance.companyNews({
   symbol: 'NASDAQ:AAPL'
@@ -41,7 +41,8 @@ googleFinance.historical({
 
 ```js
 googleFinance.companyNews({
-  symbol: SYMBOL
+  symbol: SYMBOL,
+  lang: 'en'
 }, function (err, news) {
   /*
   [
@@ -216,6 +217,100 @@ googleFinance.historical({
 });
 ```
 
+
+### Download prices Data (single symbol)
+
+```js
+googleFinance.prices({
+  symbol: SYMBOL,
+  interval: 300,
+  period: '1d'
+}, function (err, quotes) {
+  /*
+  [
+    {
+      "time": 1495670700000,
+      "date": "2017-05-25T09:05:00.000Z",
+      "symbol": "TYO:6664",
+      "close": 815,
+      "high": 819,
+      "low": 815,
+      "open": 819,
+      "volume": 36900
+    }
+    ...
+    {
+      "time": 1495692000000,
+      "date": "2017-05-25T15:00:00.000Z",
+      "symbol": "TYO:6664",
+      "close": 890,
+      "high": 890,
+      "low": 882,
+      "open": 884,
+      "volume": 60100
+    }
+  ]
+  */
+});
+```
+
+### Download prices Data (multiple symbols)
+
+```js
+googleFinance.prices({
+  symbols: [SYMBOL1, SYMBOL2],
+  interval: 180,
+  period: '1w'
+}, function (err, result) {
+  /*
+  === SHA:600519 (81) ===                       
+{                                             
+  "time": 1495675980000,                      
+  "date": "2017-05-25T10:33:00.000Z",         
+  "symbol": "SHA:600519",                     
+  "close": 449.88,                            
+  "high": 450.5,                              
+  "low": 448.74,                              
+  "open": 448.74,                             
+  "volume": 13459                             
+}                                             
+...                                           
+{                                             
+  "time": 1495695600000,                      
+  "date": "2017-05-25T16:00:00.000Z",         
+  "symbol": "SHA:600519",                     
+  "close": 450.87,                            
+  "high": 451.17,                             
+  "low": 450.52,                              
+  "open": 450.52,                             
+  "volume": 13681                             
+}                                             
+=== TYO:6664 (100) ===                        
+{                                             
+  "time": 1495670580000,                      
+  "date": "2017-05-25T09:03:00.000Z",         
+  "symbol": "TYO:6664",                       
+  "close": 815,                               
+  "high": 819,                                
+  "low": 815,                                 
+  "open": 819,                                
+  "volume": 35200                             
+}                                             
+...                                           
+{                                             
+  "time": 1495692000000,                      
+  "date": "2017-05-25T15:00:00.000Z",         
+  "symbol": "TYO:6664",                       
+  "close": 890,                               
+  "high": 890,                                
+  "low": 882,                                 
+  "open": 884,                                
+  "volume": 55500                             
+}                                             
+  */
+});
+```
+
 ### Specifying request options
 
 Optionally request options (such as a proxy) can be specified by inserting an
@@ -273,4 +368,4 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.
 </pre>
 
-[![Analytics](https://ga-beacon.appspot.com/UA-47034562-6/node-google-finance/readme?pixel)](https://github.com/zlq4863947/node-google-finance)
+[![Analytics](https://ga-beacon.appspot.com/UA-47034562-6/node-google-finance/readme?pixel)](https://github.com/zlq4863947/node-google-finance2)

@@ -8,7 +8,7 @@ var googleFinance = require('../..');
 var SYMBOL = 'TYO:6664'; //'NASDAQ:AAPL';// 
 
 var SYMBOLS = [
-  'NASDAQ:AAPL',
+  'SHA:600519',
   'TYO:6664'
 ];
 var FROM = '2017-05-01';
@@ -17,8 +17,8 @@ var TO = '2017-12-31';
 googleFinance.prices({
   //symbols: SYMBOLS,
   symbol: SYMBOL,
-  interval: 180,
-  period: '1w'
+  interval: 300,
+  period: '1d'
 }).then(function(result) {
   var isMulti = false;
   var showData = function(quotes, symbol) {
@@ -42,6 +42,6 @@ googleFinance.prices({
       showData(quotes, symbol);
     });
   } else {
-    showData(result);
+    showData(result, SYMBOL);
   }
 });

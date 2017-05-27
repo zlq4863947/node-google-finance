@@ -5,11 +5,11 @@ require('colors');
 var _ = require('lodash');
 var googleFinance = require('../..');
 
-var SYMBOL = 'TYO:5341';
+var SYMBOL = 'TYO:6664';
 
 googleFinance.companyNews({
   symbol: SYMBOL,
-  lang: 'cn'
+  lang: 'en'
 }).then(function(news) {
   console.log(util.format(
     '=== %s (%d) ===',
